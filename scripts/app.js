@@ -62,24 +62,67 @@ function guessNumberGame() {
 }
 
 function generateArray() {
-    console.log(generateRandomArray());
+    //console.log(generateRandomArray());
+    generateRandomArray();
 }
 function generateRandomArray() {
 
     let length = prompt("Enter the length of array : ");
-    let randomArray = [];
-    // Check if input is valid number between 1-100
-    if (!isNaN(length) && length > 1 && length <= 100) {
-        for (let i = 1; i <= length; i++) {
-            randomArray.unshift(Math.floor(Math.random() * 100) + 1);
-        }
-        return randomArray;
-    } else {
-        console.log("Not a valid input");
-        return ("Try again with a valid input");
-    }
+    if (length >= 1) {
+        console.log("The length of the random array is : " + length);
+        let randomArray = [];
+        // Check if input is valid number between 1-100
+        if (!isNaN(length) && length >= 1 && length <= 100) {
+            for (let i = 1; i <= length; i++) {
+                randomArray.unshift(Math.floor(Math.random() * 100) + 1);
+            }
+            console.log("The random array of " + length + " numbers is : " + randomArray);
+            return randomArray;
 
+        } else {
+            console.log("Not a valid input");
+        }
+    }
+    else {
+        console.log("Please provide a length to generate random array.");
+        return -1;
+    }
 }
+
+function calculateSum(array) {
+    let sum = 0;
+    array.forEach(element => {
+        sum = sum + element;
+    });
+    return sum;
+}
+
 function sumEvenNumbers() {
-    generateRandomArray();
+    let randomArray = [];
+    let evenNumbers = [];
+    let sum = 0;
+    while (randomArray != -1) {
+        randomArray = generateRandomArray();
+        if (randomArray.length >= 1) {
+            randomArray.forEach(element => {
+                if (element % 2 == 0) {
+                    evenNumbers.push(element);
+                }
+            });
+            if (evenNumbers.length >= 1) {
+                console.log("The even numbers in the random array are : " + evenNumbers);
+                sum = calculateSum(evenNumbers);
+                console.log("The sum of the even numbers is : " + sum);
+                return sum;
+            }
+            else {
+                console.log("No even numbers in the array, Try again!");
+                sumEvenNumbers();
+            }
+        }
+    }
+}
+
+function sum() {
+    sumEvenNumbers();
 }
