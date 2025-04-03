@@ -136,6 +136,9 @@ function variableDeclarationKeywords() {
     let b = 20;
     const c = 30;
 
+    console.log("var a  : " + a);
+    console.log("let b : " + b);
+    console.log("const c : " + c);
     console.log("Value of 'a' after defined as number : " + a);
     console.log("Value of 'b' after defined as number : " + b);
     console.log("Value of 'c' after defined as number : " + c);
