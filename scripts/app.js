@@ -126,3 +126,46 @@ function sumEvenNumbers() {
 function sum() {
     sumEvenNumbers();
 }
+
+function stringFunctions() {
+
+}
+
+function variableDeclarationKeywords() {
+    var a = 10;
+    let b = 20;
+    const c = 30;
+
+    console.log("Value of 'a' after defined as number : " + a);
+    console.log("Value of 'b' after defined as number : " + b);
+    console.log("Value of 'c' after defined as number : " + c);
+    function foo() {
+        console.log("Value of 'a' inside the function will be UNDEFINED as its not initialized within function : " + a);
+        try {
+            console.log("Value of 'b' inside the function before initialization gives REFERENCE ERROR as its not initialized within function: " + b);
+        } catch (error) {
+            console.log("Error :  " + error);
+        }
+        try {
+            console.log("Value of 'c' inside the function : " + c);
+        } catch (error) {
+            console.log("Error :  " + error);
+        }
+        var a = "hi a";
+        let b = "hello b";
+        const c = "hi hello c";
+        console.log("Value of 'a' inside the function and defined as string : " + a);
+        console.log("Value of 'b' inside the function and defined as string : " + b);
+        console.log("Value of 'c' inside the function and defined as string : " + c);
+        var a = 100;
+
+        console.log("Value of 'a' inside the function after redeclared as number : " + a);
+        // let b = 200;    IF UNCOMMENTED IT SHOWS "Syntax error" AS ITS ALREADY DECLARED
+        b = 200;
+        console.log("Value of 'b' inside the function after REDECLARING will cause SYNTAX ERROR but reassigning as number works : " + b);
+        /* c = 400;       IF UNCOMMENTED IT SHOWS "Uncaught TypeError: Assignment to constant variable."
+        console.log("Value of 'c' inside the function after REASSIGNING as number throws TypeError : " + c);*/
+        console.log("Value of 'c' inside the function after REASSIGNING as number throws Uncaught TypeError: Assignment to constant variable. ");
+    }
+    foo();
+}
