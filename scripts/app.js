@@ -127,8 +127,34 @@ function sum() {
     sumEvenNumbers();
 }
 
-function stringFunctions() {
-
+function stringProperties() {
+    console.log("Basic string manipulation");
+    let myString = "   Hello World   ";
+    console.log("let myString ='" + myString + "'");
+    console.log("length :" + myString.length);
+    console.log("at() property : handles negative indices and out-of-range indices ");
+    console.log("myString.at(0) :" + myString.at(4));
+    console.log("myString.at(-6) :" + myString.at(-6));
+    console.log("myString.at(20) :" + myString.at(20));
+    console.log("charAt() property : does not handles negative indices and out-of-range indices returns an empty string ");
+    console.log("myString.charAt(0) : " + myString.charAt(4));
+    console.log("myString.charAt(-6) :" + myString.charAt(-6));
+    console.log("myString.charAt(20) :" + myString.charAt(20));
+    console.log("slice() and substring() property : extract portions of a string based on start and end indices. slice() handles negative indices more consistently");
+    console.log("myString.slice(3, 8) :" + myString.slice(3, 8)); // Output: "Hello"
+    console.log("myString.slice(9) :" + myString.slice(9)); // Output: "World"
+    console.log("myString.slice(-8) :" + myString.slice(-8)); // Output: "World"
+    console.log("myString.slice(7, 5) :" + myString.slice(7, 5)); //output: ""
+    console.log("myString.substring(3, 8) :" + myString.substring(3, 8)); // Output: "Hello"
+    console.log("myString.substring(9) :" + myString.substring(9)); // Output: "World"
+    console.log("myString.substring(-8) :" + myString.substring(-8)); // (treats -8 as 0) Output: "   Hello  World   "
+    console.log("myString.substring(7, 5) :" + myString.substring(7, 5)); //(swaps the arguments) Output: "ll"
+    console.log("replace(searchValue, replaceValue) property : Only replaces the first occurrence of the searchValue (unless a global regular expression is used).Does not modify the original string; it returns a new string.");
+    let str = "Hello World Hello";
+    console.log("Before replace()  => str = " + str);
+    console.log("str.replace('Hello', 'Goodbye') :" + str.replace("Hello", "Goodbye")); // Output: "Goodbye World Hello"
+    console.log("str.replace(/Hello/g, 'Goodbye') :" + str.replace(/Hello/g, "Goodbye")); // Output: "Goodbye World Goodbye" (global replace using regex)
+    console.log("After replace()  => str = " + str);
 }
 
 function variableDeclarationKeywords() {
